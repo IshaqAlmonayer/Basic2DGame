@@ -69,7 +69,6 @@ public class EnemyPatrol : MonoBehaviour
 
 			// let's move to the target
 			Vector2 direction = _target.transform.position - transform.position;
-			float xDirection = direction.x;
 
 			transform.Translate(direction.normalized * speed * Time.deltaTime);
 
