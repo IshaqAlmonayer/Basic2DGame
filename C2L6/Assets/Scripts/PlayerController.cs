@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Security.Cryptography;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,7 +31,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(_isAttacking == false)
+
+        if (_isAttacking == false)
         {
             float horizontalInput = Input.GetAxisRaw("Horizontal");
             _movement = new Vector2(horizontalInput, 0f);
@@ -82,8 +79,6 @@ public class PlayerController : MonoBehaviour
         if (_animator.GetCurrentAnimatorStateInfo(0).IsTag("Idle"))
         {
             _LongIdleTimer += Time.deltaTime;
-
-            Debug.Log("Time.deltaTime: " + Time.deltaTime);
 
             if (_LongIdleTimer >= longIdleTime)
               _animator.SetTrigger("LongIdle");
